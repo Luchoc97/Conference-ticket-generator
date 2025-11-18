@@ -1,2 +1,5 @@
-# Conference-ticket-generator
-Repositorio desafío Conference ticket generator de front end mentor
+# Frontend Mentor - Conference ticket generator
+
+![Design preview for the Conference ticket generator coding challenge](./preview.jpg)
+
+## Welcome! 👋

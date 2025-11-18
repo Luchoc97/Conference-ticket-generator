@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="css/style.css">
+  
+  <title>Frontend Mentor | Conference ticket generator</title>
+
+</head>
+<body>
+
+  <!-- Form starts -->
+  <main class="contenido">
+    <div class="pagina1">
+      <img src="assets/images/logo-full.svg" alt="" srcset="">
+      <div class="texto">
+        <h1 class="titulo">Your Journey to Coding Conf <br> 2025 Starts Here!</h1>
+        <p class="parrafo">Secure your spot at next year's biggest coding conference.</p>
+      </div>
+
+      <form action="" class="datos">
+        <label for="archivo">Upload Avatar</label>
+        <input class="subirImg" type="file" name="" id="archivo" placeholder="Drag and drop or click to upload">
+        
+        <span class="sizeFoto"><img src="assets/images/icon-info.svg" alt="" srcset=""> Upload your photo (JPG or PNG, max size: 500KB).</span>
+
+        <label for="name">Full Name</label>
+        <input class="InputNombre" type="text" name="" id="name">
+
+
+        <label for="email">Email Address</label>
+        <input class="InputCorreo" type="email" name="" id="email" placeholder="example@email.com">
+
+        <label for="user">GitHub Username</label>
+        <input class="InputGit" type="email" name="" id="user" placeholder="@yourusername">
+
+      </form>
+    </div>
+    
+    <button class="generar">Generate My Ticket</button>
+
+  <!-- Form ends -->
+
+  <!-- Generated tickets starts -->
+
+
+    <div class="pagina2">
+      <img src="assets/images/logo-full.svg" alt="" srcset="">
+      <h1 class="felicidades">Congrats, <span class="nombre"></span>! <br> Your ticket is ready.</h1>
+
+      <p class="parrafoCorreo">We've emailed your ticket to <br> <span class="correo"></span> and will send updates in <br> the run up to the event.</p>
+
+      <div class="ticket-wrapper">
+        <img src="assets/images/pattern-ticket.svg" alt="" srcset="">
+
+        <div class="ticket-text">
+          <div class="coding">
+            <img src="assets/images/logo-mark.svg" alt="" srcset="">
+            <h1>Coding Conf</h1>
+          </div>
+          <p style="text-align: left; padding-left: 50px; color : #afafaf;">Jan 31, 2025 / Austin, TX</p>
+
+          <div class="profile">
+            <img class="fotoPerfil" src="" alt="">
+            <div class="nombreGit">
+              <p class="nombre2"></p>
+              <div class="usuariogit">
+                <img src="assets/images/icon-github.svg" alt="" srcset="">
+                <p class="git"></p>
+              </div>
+            </div>
+          </div>
+        <span class="ticket-number">#1</span>
+
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+  <!-- Generated tickets ends -->
+    <script>
+        let uno = document.querySelector(".pagina1");
+        let dos = document.querySelector(".pagina2");
+        let boton = document.querySelector(".generar");
+        let subirImagen = document.querySelector(".subirImg");
+        let spanNombre = document.querySelector(".nombre");
+        let spanNombre2 = document.querySelector(".nombre2");
+        let spanCorreo = document.querySelector(".correo");
+        let spanusergithub = document.querySelector(".git");
+        let imageURL = '';
+        let fotoPerfil = document.querySelector(".fotoPerfil");
+
+        // Cuando el usuario selecciona una imagen
+        subirImagen.addEventListener('change', (event) => {
+          const file = event.target.files[0];
+          if (file) {
+            imageURL = URL.createObjectURL(file); // Se genera una URL temporal
+            console.log('Ruta temporal:', imageURL);
+          }
+        });
+
+        function mostrar(){
+            let Inputname = document.querySelector(".InputNombre").value;
+            let InputLasname = document.querySelector(".InputCorreo").value;
+            let InputGit = document.querySelector(".InputGit").value;
+
+            uno.style.display = "none"
+            boton.style.display = "none"
+            dos.style.display = "block"
+            spanNombre.innerHTML = Inputname;
+            spanCorreo.innerHTML = InputLasname;
+            spanNombre2.innerHTML = Inputname;
+            spanusergithub.innerHTML = InputGit;
+
+            if (imageURL) {
+              fotoPerfil.src = imageURL; // Muestra la imagen en la etiqueta <img>
+            } else {
+              alert('Primero selecciona una imagen.');
+            }
+
+            console.log(Inputname);
+        }
+
+        boton.addEventListener("click", () => {
+            mostrar();
+        });
+
+    </script>
+</body>
+</html>

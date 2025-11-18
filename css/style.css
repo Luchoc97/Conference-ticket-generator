@@ -1,0 +1,277 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+body{
+    background-image: url(../assets/images/background-desktop.png);
+    background-size: cover;
+}
+.contenido{
+    width: 80%;
+    margin: 40px auto 30px auto;
+    border-radius: 10px;
+    color: #fff;
+    text-align: center;
+}
+.contenido .pagina1 .texto{
+    width: 60%;
+    margin: auto;
+}
+.contenido .pagina1 .texto .titulo{
+    font-size: 3rem;
+}
+.contenido .pagina1 .texto .parrafo{
+    color: #afafaf;
+    margin: 20px 0 30px 0;
+}
+.contenido .pagina1 .datos{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+}
+.contenido .pagina1 .datos .sizeFoto{
+    display: flex;
+    align-items: center;
+    font-size: .6rem;
+    color: #afafaf;
+    width: 100%;
+    text-align: left;
+    margin: 5px 0 10px 0;
+    word-spacing: .3rem;
+}
+.contenido .pagina1 .datos label{
+    width: 100%;
+    text-align: left;
+    margin: 10px 0 5px 0;
+}
+.contenido .pagina1 .datos #archivo{
+    appearance: none;
+    width: 100%;
+    height: 10vh;
+    border: 1px dashed #fff;
+    border-radius: 10px;
+}
+.contenido .pagina1 .datos #archivo::before{
+    content: '';
+    background-image: url(../assets/images/icon-upload.svg);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-position: center;
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+.contenido .pagina1 .datos input[type="text"], .contenido .datos input[type="email"]{
+    width: 100%;
+    color: #fff;
+    appearance: none;
+    background-color: transparent;
+    border-radius: 10px;
+    padding: 10px 20px;
+    border: 1px solid #e2e2e2;
+}
+.contenido .generar{
+    background-color: #F77564;
+    padding: 15px;
+    width: 40%;
+    color: #000;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 15px;
+    font-weight: bold;
+}
+.contenido .pagina2{
+    display: none;
+}
+.contenido .pagina2 .felicidades{
+    font-size: 2.8rem;
+}
+.contenido .pagina2 .nombre{
+    color: #F77564;
+    background-image: linear-gradient(90deg, #F77564 40%, #FFFFFF 80%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+.contenido .pagina2 .parrafoCorreo{
+    margin: 25px 0 50px 0;
+}
+.contenido .pagina2 .correo{
+    color: #F77564;
+}
+
+.ticket-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 520px;
+    margin: auto;
+}
+
+.ticket-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.ticket-text {
+    position: absolute;
+    top: 12%;
+    left: 8%;
+    width: 80%;
+    color: white;
+    font-family: sans-serif;
+}
+.ticket-text .coding{
+    display: flex;
+}
+.ticket-text .coding h1{
+    padding-left: 15px;
+
+}
+/* TITULO */
+.event-title {
+    font-size: 1.3rem;
+    margin: 0;
+}
+
+.event-date {
+    margin-top: 4px;
+    opacity: 0.9;
+}
+
+/* PERFIL */
+.profile {
+    margin-top: 25%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.fotoPerfil {
+    width: 60px;
+    height: 60px;
+    border-radius: 15%;
+}
+
+/* NOMBRE */
+.nombre2 {
+    text-align: left;
+    font-size: 1.2rem;
+    margin: 0;
+}
+.usuariogit{
+    display: flex;
+}
+.git {
+    margin: 0;
+    opacity: 0.8;
+}
+
+/* NUMERO ROTADO */
+.ticket-number {
+    position: absolute;
+    right: -20%;
+    top: 40%;
+    transform: rotate(90deg);
+    opacity: 0.6;
+    font-size: 0.8rem;
+    color: #afafaf;
+}
+
+/* RESPONSIVE */
+@media (max-width: 480px) {
+    .event-title { font-size: 1.1rem; }
+    .fotoPerfil { width: 45px; height: 45px; }
+    .ticket-number { font-size: 0.7rem; }
+}
+
+
+/*.contenido .pagina2 .tiquete{
+    position: relative;
+}
+.contenido .pagina2 .tiquete .contador{
+    font-size: 2rem;
+    position: absolute;
+    top: 45%;
+    right: 30%;
+    writing-mode: vertical-lr;
+    text-orientation: mixed;
+    color: #afafaf;
+    grid-area: contador;
+}
+.contenido .pagina2 .tiquete .infoTiq{
+    position: absolute;
+    top: 15%;
+    left: 30%;
+}
+.contenido .pagina2 .tiquete .infoTiq .logoFecha{
+    text-align: left;
+    display: flex;
+}
+.contenido .pagina2 .tiquete .infoTiq p{
+    margin: 5% 0 15% 0;
+    color: #afafaf;
+}
+.contenido .pagina2 .tiquete .infoTiq .logoFecha h1{
+    display: inline;
+    margin-left: 5%;
+}
+.contenido .pagina2 .tiquete .infoTiq .infoPerfil{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: .7fr 1fr;
+    grid-template-areas: "foto nombreGit"
+                         "foto userGit";
+}
+.contenido .pagina2 .tiquete .infoTiq .infoPerfil .fotoPerfil{
+    width: 80%;
+    grid-area: foto;
+    border-radius: 20px;
+}
+.contenido .pagina2 .tiquete .infoTiq .infoPerfil .nombreGit{
+    text-align: left;
+}
+.contenido .pagina2 .tiquete .infoTiq .infoPerfil .nombreGit span{
+    font-size: 2.2rem;
+}
+.contenido .pagina2 .tiquete .infoTiq .infoPerfil  .userGit{
+    display: flex;
+    align-items: center;
+    text-align: left;
+    grid-area: userGit;
+}
+@media (max-width: 1024px){
+    .contenido, .encabezado{
+        width: 90%;
+    }
+    .contenido #extensiones{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+}
+@media (max-width: 767px){
+    .contenido, .encabezado{
+        width: 70%;
+    }
+    .contenido #extensiones{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+}
+@media (max-width: 480px){
+    .contenido, .encabezado{
+        width: 90%;
+    }
+    .contenido, .estado{
+        display: block !important;
+        text-align: center;
+    }
+}*/
